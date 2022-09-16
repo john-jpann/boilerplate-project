@@ -1,0 +1,83 @@
+/*——————————————————————
+
+[Table of contents]f
+
+1. Colors
+2. Variables
+3. Typography
+4. Mixins
+5. Utilities
+
+——————————————————————-*/
+
+/* ===COLORS=== */
+$colors: (
+  primary: (
+    white: #fff,
+  ),
+  secondary: (
+    black: #000,
+  ),
+  accent: (
+    default: #f0f,
+  ),
+  neutral: (
+    dark: #222,
+    light: #fff,
+  ),
+);
+
+/* ===VARIABLES=== */
+:root {
+  @each $color, $shades in $colors {
+    @each $shade, $value in $shades {
+      --clr-#{$color}-#{$shade}: #{$value};
+    }
+  }
+
+  --font-montserrat: "Montserrat", sans-serif;
+  --font-quicksand: "Quicksand", sans-serif;
+}
+
+/* ===TYPOGRAPHY CHANGES=== */
+* {
+  font-family: var(--font-quicksand);
+}
+
+/* ===MIXINS=== */
+@mixin truncate($lines: 2) {
+  display: -webkit-box;
+  -webkit-line-clamp: $lines;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+@mixin parallax() {
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* ===UTILITIES=== */
+.sr-only {
+  padding: auto;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.max-wrapper {
+  width: 85%;
+  max-width: 1440px;
+  margin-inline: auto;
+}
+
+.overflow-hidden {
+  overflow: hidden;
+}
