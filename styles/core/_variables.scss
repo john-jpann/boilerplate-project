@@ -5,8 +5,8 @@
 1. Colors
 2. Variables
 3. Typography
-4. Mixins
-5. Utilities
+4. Utilities
+5. Mixins
 
 ——————————————————————-*/
 
@@ -35,28 +35,13 @@ $colors: (
     }
   }
 
-  --font-montserrat: "Montserrat", sans-serif;
-  --font-quicksand: "Quicksand", sans-serif;
+  --font-montserrat: 'Montserrat', sans-serif;
+  --font-quicksand: 'Quicksand', sans-serif;
 }
 
 /* ===TYPOGRAPHY CHANGES=== */
 * {
   font-family: var(--font-quicksand);
-}
-
-/* ===MIXINS=== */
-@mixin truncate($lines: 2) {
-  display: -webkit-box;
-  -webkit-line-clamp: $lines;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-}
-
-@mixin parallax() {
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
 }
 
 /* ===UTILITIES=== */
@@ -79,5 +64,20 @@ $colors: (
 }
 
 .overflow-hidden {
+  overflow: hidden;
+}
+
+.parallax {
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* ===MIXINS=== */
+@mixin truncate($lines: 2) {
+  display: -webkit-box;
+  -webkit-line-clamp: $lines;
+  -webkit-box-orient: vertical;
   overflow: hidden;
 }
