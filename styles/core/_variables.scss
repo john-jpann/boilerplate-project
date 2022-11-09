@@ -11,30 +11,9 @@
 ——————————————————————-*/
 
 /* ===COLORS=== */
-$colors: (
-  primary: (
-    white: #fff,
-  ),
-  secondary: (
-    black: #000,
-  ),
-  accent: (
-    default: #f0f,
-  ),
-  neutral: (
-    dark: #222,
-    light: #fff,
-  ),
-);
 
 /* ===VARIABLES=== */
 :root {
-  @each $color, $shades in $colors {
-    @each $shade, $value in $shades {
-      --clr-#{$color}-#{$shade}: #{$value};
-    }
-  }
-
   --font-montserrat: 'Montserrat', sans-serif;
   --font-quicksand: 'Quicksand', sans-serif;
 }
@@ -57,7 +36,7 @@ $colors: (
   border: 0;
 }
 
-.max-wrapper {
+.max-width {
   width: 85%;
   max-width: 1440px;
   margin-inline: auto;
